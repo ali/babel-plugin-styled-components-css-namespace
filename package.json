@@ -165,6 +165,6 @@
     "lint-staged": "4.3.0",
     "prettier": "1.7.4",
     "rimraf": "2.6.2",
-    "styled-components": "2.2.2"
+    "styled-components": "3.3.3"
   }
 }
