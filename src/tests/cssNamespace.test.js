@@ -99,6 +99,28 @@ pluginTester({
         __dirname,
         './fixtures/double_self_refs_styled_component.js'
       )
+    },
+    {
+      title:
+        'creates wrappers around components that use repeated self refs (cssNamespace)',
+      pluginOptions: {
+        cssNamespace: ['.such-specific']
+      },
+      fixture: path.join(
+        __dirname,
+        './fixtures/repeated_self_refs_styled_component.js'
+      )
+    },
+    {
+      title:
+        'creates wrappers around components that use repeated self refs (rawCssNamespace)',
+      pluginOptions: {
+        rawCssNamespace: ['body .specific .rule', '#different-wrapper']
+      },
+      fixture: path.join(
+        __dirname,
+        './fixtures/repeated_self_refs_styled_component.js'
+      )
     }
   ]
 });

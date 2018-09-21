@@ -98,6 +98,62 @@ export default MyStyledComponent;
 "
 `;
 
+exports[`creates wrappers around components that use repeated self refs (cssNamespace) 1`] = `
+"
+const styled = { div() {} };
+
+const MyStyledComponent = styled.div\`
+  && {
+    background-color: 'yellow';
+  }
+\`;
+
+export default MyStyledComponent;
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const styled = { div() {} };
+
+const MyStyledComponent = styled.div\`
+..such-specific & {
+  && {
+    background-color: 'yellow';
+  }
+}
+\`;
+
+export default MyStyledComponent;
+"
+`;
+
+exports[`creates wrappers around components that use repeated self refs (rawCssNamespace) 1`] = `
+"
+const styled = { div() {} };
+
+const MyStyledComponent = styled.div\`
+  && {
+    background-color: 'yellow';
+  }
+\`;
+
+export default MyStyledComponent;
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const styled = { div() {} };
+
+const MyStyledComponent = styled.div\`
+body .specific .rule, #different-wrapper {
+  && {
+    background-color: 'yellow';
+  }
+}
+\`;
+
+export default MyStyledComponent;
+"
+`;
+
 exports[`creates wrappers as part of the simple raw wrapper not affecting css rules applied in the styled components 1`] = `
 "
 const styled = { div() {} };
