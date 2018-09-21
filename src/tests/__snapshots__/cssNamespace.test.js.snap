@@ -115,7 +115,7 @@ export default MyStyledComponent;
 const styled = { div() {} };
 
 const MyStyledComponent = styled.div\`
-..such-specific & {
+.body .specific .rule & {
   && {
     background-color: 'yellow';
   }
@@ -143,7 +143,7 @@ export default MyStyledComponent;
 const styled = { div() {} };
 
 const MyStyledComponent = styled.div\`
-body .specific .rule, #different-wrapper {
+body .specific .rule {
   && {
     background-color: 'yellow';
   }
